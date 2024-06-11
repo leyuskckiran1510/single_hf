@@ -2,10 +2,10 @@
 #define  IMPLE_MEMMNG
 #include "memmng.c"
 
-#include "cli_src/canvas.h"
-#include "cli_src/cli-engine.h"
-#include "cli_src/colors.h"
-#include "cli_src/event.h"
+#include "cli_src/src/canvas.h"
+#include "cli_src/src/cli-engine.h"
+#include "cli_src/src/colors.h"
+#include "cli_src/src/event.h"
 
 #include <stddef.h>
 #include <stdio.h>
@@ -48,7 +48,7 @@ int main() {
   clear_screen();
   int HEIGHT = 40, WIDTH = 80;
   Canvas *c = InitWindow(WIDTH, HEIGHT, "CLI-chess");
-  defer;
+  // defer;
   int loop = 1;
   int cont = 0;
   chess_board(c, WIDTH, HEIGHT);
@@ -71,7 +71,5 @@ int main() {
   }
   free_canvas(c);
   reset_all();
-  printf("%d",__DEFER);
-    scanf("%d",&loop);
   return 0;
 }

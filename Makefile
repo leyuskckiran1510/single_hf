@@ -3,7 +3,7 @@ CFLAGS = -ggdb3 -Wall -Wextra -lm -pedantic -I./src  -lpthread   -fsanitize=addr
 
 SRCDIR = src
 BUILDDIR = build
-CLI_SRC = cli_src/
+CLI_SRC = cli_src/src
 FILTERS = "main.c|test.c"
 CLI_FILES:=$(shell find $(CLI_SRC) -type f -iname '*.c' | grep -Ev $(FILTERS))
 CLI_OBJS =  $(CLI_FILES:.c=.o)
